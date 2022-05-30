@@ -1,0 +1,60 @@
+.zp-scroller {
+  overflow: hidden;
+  position: relative;
+  transform: translateZ(0);
+}
+.zp-scroller:active .zp-scrollbar,
+.zp-scroller:focus .zp-scrollbar,
+.zp-scroller:hover .zp-scrollbar {
+  opacity: 1;
+}
+.zp-scroller__container {
+  height: 100%;
+  overflow: scroll;
+}
+.zp-scroller__container::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.zp-scroller__content {
+  position: relative;
+}
+.zp-scrollbar__indicator {
+  position: relative;
+  display: block;
+  width: 0;
+  height: 0;
+  cursor: pointer;
+  border-radius: inherit;
+  background: rgba(0, 0, 0, .3);
+}
+.zp-scrollbar__indicator:hover {
+  background: rgba(0, 0, 0, .5);
+}
+.zp-scrollbar {
+  position: absolute;
+  right: 2px;
+  bottom: 2px;
+  z-index: 1;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity .2s ease-out;
+  background: rgba(0, 0, 0, .1);
+}
+.zp-scrollbar.zp-scrollbar__h {
+  height: 6px;
+  left: 2px;
+}
+.zp-scrollbar.zp-scrollbar__h > div {
+  height: 100%;
+}
+.zp-scrollbar.zp-scrollbar__v {
+  width: 6px;
+  top: 2px;
+}
+.zp-scrollbar.zp-scrollbar__v > div {
+  width: 100%;
+}
+.is-scrolling {
+  user-select: none;
+}
